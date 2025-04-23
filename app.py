@@ -2,10 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 import os
 
+
 app = Flask(__name__)
 
 # MongoDB 連線設置
-mongo_uri = os.getenv("MONGO_URI", "mongodb://mongo:27017")  # 使用環境變數或預設
+mongo_uri = os.getenv("MONGO_URI", "mongodb+srv://luyuam0:<db_password>@main.9khk4se.mongodb.net/?retryWrites=true&w=majority&appName=main")  # 使用環境變數或預設
 client = MongoClient(mongo_uri)
 db = client["appointment_db"]  # 資料庫名稱
 collection = db["appointments"]  # 集合名稱
